@@ -27,5 +27,6 @@ def build(bld):
         source=['tool.c'],
         includes=['.'],
         target='tool',
+        #use=['PTHREAD'],       # uncomment this line to use pthread
         vnum=bld.env.VERSION,
         )

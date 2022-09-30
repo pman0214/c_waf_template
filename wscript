@@ -24,6 +24,9 @@ def configure(conf):
     conf.env.VERSION=VERSION
     conf.env.INCLUDES += ['libtool']
 
+    # # uncomment below to use pthread
+    # conf.check(header_name='pthread.h', lib=['pthread'], uselib_store='PTHREAD')
+
 def build(bld):
     bld.recurse('libtool')
     bld.program(
@@ -32,6 +35,9 @@ def build(bld):
                 ],
         defines=['TARGET="'+APPNAME+'"'],
         target=APPNAME,
-        use=['tool'],
+        use=[
+            'tool',
+            # 'PTHREAD', # uncomment this line to use pthread
+            ],
         vnum=bld.env.VERSION,
         )
