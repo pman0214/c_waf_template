@@ -18,7 +18,7 @@ curl -o waf https://waf.io/waf-2.0.24
 chmod 755 waf
 ```
 
-Copy `temp.c` and `temp.h` to make a new modules in your C project.
+Copy `temp.c` and `temp.h` to make new modules in your C project.
 
 `wscript` also needs to be modified to include the new modules.
 Set your main program name at `APPNAME` in `wscript`.
